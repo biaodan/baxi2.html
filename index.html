@@ -5,12 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Penasihat Ditugaskan</title>
     <style>
+        /* 全局居中 */
         body { font-family: -apple-system, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background: #e5ddd5; }
-        .card { text-align: center; width: 88%; max-width: 350px; background: white; padding: 40px 20px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        
+        /* 卡片样式，确保内部内容水平居中 */
+        .card { 
+            text-align: center; 
+            width: 88%; 
+            max-width: 350px; 
+            background: white; 
+            padding: 40px 20px; 
+            border-radius: 20px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; /* 核心：让子元素水平居中 */
+            box-sizing: border-box; /* 确保内边距不影响宽度计算 */
+        }
+        
+        /* ✓图标样式 */
         .ws-icon { width: 65px; height: 65px; background: #25D366; color: white; font-size: 35px; line-height: 65px; border-radius: 50%; margin: 0 auto 20px; display: block; }
-        .title { font-size: 20px; font-weight: bold; margin-bottom: 12px; color: #075E54; }
-        .text { font-size: 15px; color: #4a4a4a; line-height: 1.5; margin-bottom: 30px; }
-        .btn { display: flex; align-items: center; justify-content: center; background: #25D366; color: white; text-decoration: none; padding: 16px; border-radius: 12px; font-weight: bold; font-size: 17px; box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3); border: none; width: 100%; cursor: pointer; }
+        
+        /* 标题样式 */
+        .title { font-size: 20px; font-weight: bold; margin-bottom: 12px; color: #075E54; width: 100%; }
+        
+        /* 正文样式 */
+        .text { font-size: 15px; color: #4a4a4a; line-height: 1.5; margin-bottom: 30px; width: 100%; box-sizing: border-box; }
+        
+        /* 🛠️ 核心修正：按钮样式 */
+        .btn { 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            background: #25D366; 
+            color: white; 
+            text-decoration: none; 
+            padding: 16px; 
+            border-radius: 12px; 
+            font-weight: bold; 
+            font-size: 17px; 
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3); 
+            border: none; 
+            
+            /* 修正居中的关键 */
+            width: 100%;            /* 撑满卡片可用宽度 */
+            max-width: 280px;      /* 限制最大宽度，避免贴边，更好看 */
+            margin: 0 auto;        /* 强制水平居中 */
+            
+            cursor: pointer; 
+            box-sizing: border-box; /* 核心：确保 padding 不会把按钮撑破 */
+        }
+        
+        /* 按钮前的💬图标 */
         .btn:before { content: '💬'; margin-right: 8px; font-size: 20px; }
     </style>
 </head>
@@ -21,7 +67,7 @@
         <div class="text">
             Permohonan anda telah berjaya diproses. Sila klik butang di bawah untuk <b>menghubungi kami</b> sekarang bagi mendapatkan maklumat lanjut:
         </div>
-        <!-- 指向你的马来西亚链接，但文字避开了敏感词 -->
+        <!-- 修正后的按钮 -->
         <a href="https://svip1027.top/mlxy9908f" class="btn">HUBUNGI KAMI SEKARANG</a>
     </div>
 </body>
