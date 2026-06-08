@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Conexão Segura - Copa 2026</title>
     
+    <!-- ========================================== -->
+    <!-- 1. Meta Pixel 官方基础追踪代码 -->
+    <!-- ========================================== -->
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -14,7 +17,7 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '930288810067437'); // 完美封装你的专用像素
+    fbq('init', '930288810067437'); // 您的专用像素
     fbq('track', 'PageView'); // 进站触发 PageView
     </script>
     <noscript><img height="1" width="1" style="display:none"
@@ -22,10 +25,10 @@
     /></noscript>
 
     <script>
-        // 核心话术库：普通问候语（锁死 30% 概率，防检测伪装）
-        var commonPhrase = "Olá, tudo bem?"; // 🇨🇳 中文：你好。
+        // 🎯 核心伪装词：死死锁死 30% 的高触发概率（安全防查首选）
+        var commonPhrase = "Olá, sou torcedor e vim pelo anúncio."; // 中文：你好，我是球迷，看广告来的。
 
-        // 剩余的 9 句专业流派话术（平分剩下的 70% 概率，打散话术痕迹）
+        // 🎲 剩余的 8 句专业流派话术（完全平分剩下的 70% 概率）
         var specialPhrases = [
             "Falar com o analista no privado.", // 1. 在私聊中和分析师对话。
             "Quero a análise dos especialistas. Como funciona?", // 2. 我想要专家的分析。请问怎么弄？
@@ -33,38 +36,39 @@
             "Olá, você tem o relatório de dados detalhado?", // 4. 你好，有详细的数据报告嘛。
             "Vim pelo anúncio, me envia a planilha de dados frios por favor.", // 5. 我是看广告来的，请把那份冷酷的数据表格发给我。
             "Quero receber o Raio-X completo e gratuito da Copa 2026.", // 6. 想获取免费且完整的2026世界杯透视图表。
-            "Quero a análise detalhada and o relatório de tendências desta edição.", // 7. 我想要这届的详细分析和趋势报告。
-            "Gostaria de saber mais informações.", // 8. 🎯 已经为你修改成：我想了解一下。
-            "Quero seguir a matemática dos profissionais e parar de chutar sozinho." // 9. 想跟随专业选手的数学逻辑，不再盲目瞎猜。
+            "Quero a análise detalhada e o relatório de tendências desta edição.", // 7. 我想要这届的详细分析和趋势报告。
+            "Gostaria de saber mais informações." // 8. 我想了解一下。
         ];
 
-        // 🚀 彻底扔掉分流盘，直接绑定你的全新 Telegram 客服号
+        // 🚀 直连你的全新专用 Telegram 客服号
         var tgUsername = "fffdd90";
 
         function handleButtonClick(event) {
             event.preventDefault();
 
-            // 1. 点击时立刻触发 Lead 核心转换事件，保证广告户能看到精准点击数据
+            // 点击按钮时，立刻触发 Lead 核心转化事件，传回 Meta 后台
             fbq('track', 'Lead');
 
-            // 2. 概率权重算法（30% 你好，70% 其他）
+            // 核心黑科技：多段概率权重算法
             var selectedPhrase = "";
-            var roll = Math.random(); 
+            var roll = Math.random(); // 生成 0 到 1 之间的随机数
 
             if (roll < 0.30) {
+                // 🎯 30% 概率：直接命中核心伪装词，伪装真人行为
                 selectedPhrase = commonPhrase;
             } else {
+                // 🎲 70% 概率：从剩下 8 句专业词里盲抽，彻底打散痕迹
                 var randomIndex = Math.floor(Math.random() * specialPhrases.length);
                 selectedPhrase = specialPhrases[randomIndex];
             }
 
-            // 3. 将话术进行标准的 URL 编码
+            // 将抽中的话术进行标准的 URL 编码
             var encodedPhrase = encodeURIComponent(selectedPhrase);
             
-            // 4. Telegram 官方标准直连带字强拉格式（100% 成功注入预填文本）
+            // 官方标准直连带字强拉格式（100% 成功往老哥聊天框里注入文字）
             var finalUrl = "https://t.me/" + tgUsername + "?text=" + encodedPhrase;
 
-            // 5. 延迟 200 毫秒确保像素 Lead 成功发射并回传给 Meta，随即秒速唤起 TG 聊天窗口
+            // 延迟 200 毫秒确保像素 Lead 成功发射并完美回传，随即极速唤起 TG 聊天
             setTimeout(function() {
                 window.location.href = finalUrl;
             }, 200);
@@ -91,6 +95,7 @@
     <h1>CONEXÃO VIP LIBERADA</h1>
     <p>Clique no botão abaixo para iniciar seu atendimento exclusivo via Telegram e receber os dados criptografados da Copa 2026.</p>
     
+    <!-- 立即对话 核心 Action 按钮 -->
     <a href="#" class="btn-action" onclick="handleButtonClick(event)">
         FALAR COM O ANALISTA AGORA
     </a>
