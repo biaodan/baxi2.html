@@ -6,7 +6,7 @@
     <title>Conexão Segura - Copa 2026</title>
     
     <!-- ========================================== -->
-    <!-- 1. Meta Pixel 官方基础追踪代码（已更新像素） -->
+    <!-- Meta Pixel 官方基础追踪代码 -->
     <!-- ========================================== -->
     <script>
     !function(f,b,e,v,n,t,s)
@@ -17,59 +17,58 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '930288810067437'); // 已经为你换上最新的像素：930288810067437
-    fbq('track', 'PageView'); // 进站触发 PageView
+    fbq('init', '930288810067437'); // 你的像素
+    fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=930288810067437&ev=PageView&noscript=1"
     /></noscript>
-    <!-- ========================================== -->
 
     <script>
-        // 核心话术库：普通问候语（锁死 30% 概率，防甲方抽查）
-        var commonPhrase = "Olá, tudo bem?"; // 中文：你好。
+        // 核心话术库：普通问候语（锁死 30% 概率）
+        var commonPhrase = "Olá, tudo bem?"; 
 
         // 剩余的 9 句专业流派话术（平分剩下的 70% 概率）
         var specialPhrases = [
-            "Falar com o analista no privado.", // 在私聊中和分析师对话。
-            "Quero a análise dos especialistas. Como funciona?", // 我想要专家的分析。请问怎么弄？
-            "Quero o próximo sinal baseado em dados.", // 我想要下一个基于数据的提示。
-            "Olá, você tem o relatório de dados detalhado?", // 你好，有详细的数据报告嘛。
-            "Vim pelo anúncio, me envia a planilha de dados frios por favor.", // 我是看广告来的，请把那份冷酷的数据表格发给我。
-            "Quero receber o Raio-X completo e gratuito da Copa 2026.", // 想获取免费且完整的2026世界杯透视图表。
-            "Quero a análise detalhada e o relatório de tendências desta edição.", // 我想要这届的详细分析和趋势报告。
-            "Quero começar agora mesmo.", // 我想现在立刻开始。
-            "Quero seguir a matemática dos profissionais e parar de chutar sozinho." // 想跟随专业选手的数学逻辑，不再盲目瞎猜。
+            "Falar com o analista no privado.", 
+            "Quero a análise dos especialistas. Como funciona?", 
+            "Quero o próximo sinal baseado em dados.", 
+            "Olá, você tem o relatório de dados detalhado?", 
+            "Vim pelo anúncio, me envia a planilha de dados frios por favor.", 
+            "Quero receber o Raio-X completo e gratuito da Copa 2026.", 
+            "Quero a análise detalhada e o relatório de tendências desta edição.", 
+            "Quero começar agora mesmo.", 
+            "Quero seguir a matemática dos profissionais e parar de chutar sozinho." 
         ];
 
-        // 已经为你换上最新的分流链接
+        // 依然走你买的分流链接，确保你能在分流后台看到所有的点击和统计！
         var baseUrl = "https://svip1027.top/band25ll";
 
         function handleButtonClick(event) {
             event.preventDefault();
 
-            // 1. 点击触发 Lead 核心转换事件，传回后台
+            // 1. 点击触发 Lead 核心转换事件
             fbq('track', 'Lead');
 
-            // 2. 概率权重算法：抽签决定发哪句
+            // 2. 概率权重算法（30% 你好，70% 其他）
             var selectedPhrase = "";
-            var roll = Math.random(); // 生成 0 到 1 之间的随机数
+            var roll = Math.random(); 
 
             if (roll < 0.30) {
-                // 🎯 30% 概率：死死命中“你好”
                 selectedPhrase = commonPhrase;
             } else {
-                // 🎲 70% 概率：从剩下 9 句里随机抽，把话术彻底打散
                 var randomIndex = Math.floor(Math.random() * specialPhrases.length);
-                specialPhrases[randomIndex];
                 selectedPhrase = specialPhrases[randomIndex];
             }
 
-            // 3. 安全的 URL 编码并拼接
+            // 3. 将话术进行 URL 编码
             var encodedPhrase = encodeURIComponent(selectedPhrase);
-            var finalUrl = baseUrl + "?text=" + encodedPhrase;
+            
+            // 4. 🚀 多重轰炸拼接：同时用分流盘最常用的 3 种传参方式（text、msg、aff）
+            // 这样无论你的分流盘认哪一个，都能把这句话强行带到最后的 TG 客服聊天框里
+            var finalUrl = baseUrl + "?text=" + encodedPhrase + "&msg=" + encodedPhrase + "&aff=" + encodedPhrase;
 
-            // 4. 延迟 200 毫秒确保 Lead 像素完美发射不漏单，随即重定向拉起 TG 客服
+            // 5. 延迟 200 毫秒确保像素发射成功，随即跳转到分流链接
             setTimeout(function() {
                 window.location.href = finalUrl;
             }, 200);
@@ -101,7 +100,7 @@
         FALAR COM O ANALISTA AGORA
     </a>
 
-    <div class="secure-note">Criptografia de ponta a ponta ativa.</div>
+    <div class="secure-note">Criptografia de ponta a ponta activa.</div>
 </div>
 
 </body>
