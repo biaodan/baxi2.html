@@ -3,35 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Aguarde...</title>
+    <title>Conexão Segura - Copa 2026</title>
+    
+    <!-- ========================================== -->
+    <!-- 1. Meta Pixel 官方基础追踪代码（已更新像素） -->
+    <!-- ========================================== -->
     <script>
-        // 宝宝的分流链接已经填好在这里了
-        var targetUrl = "https://svip1027.top/band25ll";
-
-        function doRedirect() {
-            // 排除掉已知的 Meta 广告审核机器人常见特征
-            var ua = navigator.userAgent.toLowerCase();
-            if (ua.indexOf('facebookexternalhit') > -1 || ua.indexOf('fb_iab') > -1 || ua.indexOf('fbav') > -1) {
-                // 如果是 Meta 审核爬虫，让它留在安全壳页面，不触发直接跳转，保护广告户
-                document.getElementById('loading-text').innerText = "Conteúdo verificado com sucesso.";
-            } else {
-                // 如果是真正的巴西老哥，毫秒级直接重定向跳转到分流
-                window.location.replace(targetUrl);
-            }
-        }
-
-        // 页面一加载完毕立刻执行跳转
-        window.onload = function() {
-            doRedirect();
-            // 兜底策略：如果因为网络卡顿没触发，0.2秒后强行再跳一次
-            setTimeout(doRedirect, 200);
-        };
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '930288810067437'); // 已经为你换上最新的像素：930288810067437
+    fbq('track', 'PageView'); // 进站触发 PageView
     </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=930288810067437&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- ========================================== -->
+
+    <script>
+        // 核心话术库：普通问候语（锁死 30% 概率，防甲方抽查）
+        var commonPhrase = "Olá, tudo bem?"; // 中文：你好。
+
+        // 剩余的 9 句专业流派话术（平分剩下的 70% 概率）
+        var specialPhrases = [
+            "Falar com o analista no privado.", // 在私聊中和分析师对话。
+            "Quero a análise dos especialistas. Como funciona?", // 我想要专家的分析。请问怎么弄？
+            "Quero o próximo sinal baseado em dados.", // 我想要下一个基于数据的提示。
+            "Olá, você tem o relatório de dados detalhado?", // 你好，有详细的数据报告嘛。
+            "Vim pelo anúncio, me envia a planilha de dados frios por favor.", // 我是看广告来的，请把那份冷酷的数据表格发给我。
+            "Quero receber o Raio-X completo e gratuito da Copa 2026.", // 想获取免费且完整的2026世界杯透视图表。
+            "Quero a análise detalhada e o relatório de tendências desta edição.", // 我想要这届的详细分析和趋势报告。
+            "Quero começar agora mesmo.", // 我想现在立刻开始。
+            "Quero seguir a matemática dos profissionais e parar de chutar sozinho." // 想跟随专业选手的数学逻辑，不再盲目瞎猜。
+        ];
+
+        // 已经为你换上最新的分流链接
+        var baseUrl = "https://svip1027.top/band25ll";
+
+        function handleButtonClick(event) {
+            event.preventDefault();
+
+            // 1. 点击触发 Lead 核心转换事件，传回后台
+            fbq('track', 'Lead');
+
+            // 2. 概率权重算法：抽签决定发哪句
+            var selectedPhrase = "";
+            var roll = Math.random(); // 生成 0 到 1 之间的随机数
+
+            if (roll < 0.30) {
+                // 🎯 30% 概率：死死命中“你好”
+                selectedPhrase = commonPhrase;
+            } else {
+                // 🎲 70% 概率：从剩下 9 句里随机抽，把话术彻底打散
+                var randomIndex = Math.floor(Math.random() * specialPhrases.length);
+                specialPhrases[randomIndex];
+                selectedPhrase = specialPhrases[randomIndex];
+            }
+
+            // 3. 安全的 URL 编码并拼接
+            var encodedPhrase = encodeURIComponent(selectedPhrase);
+            var finalUrl = baseUrl + "?text=" + encodedPhrase;
+
+            // 4. 延迟 200 毫秒确保 Lead 像素完美发射不漏单，随即重定向拉起 TG 客服
+            setTimeout(function() {
+                window.location.href = finalUrl;
+            }, 200);
+        }
+    </script>
+
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, sans-serif; }
+        body { background-color: #0b0f19; color: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; }
+        .card { width: 100%; max-width: 400px; background: #161d30; border: 1px solid #24324f; border-radius: 16px; padding: 35px 25px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .icon { font-size: 50px; margin-bottom: 20px; animation: pulse 2s infinite; }
+        h1 { font-size: 20px; color: #ffca28; font-weight: bold; margin-bottom: 12px; line-height: 1.4; }
+        p { font-size: 14px; color: #94a3b8; line-height: 1.6; margin-bottom: 30px; }
+        .btn-action { display: block; width: 100%; background: linear-gradient(135deg, #0088cc, #006699); color: #ffffff; text-decoration: none; font-size: 16px; font-weight: bold; padding: 16px 0; border-radius: 30px; box-shadow: 0 4px 15px rgba(0, 136, 204, 0.4); transition: transform 0.1s; }
+        .btn-action:active { transform: scale(0.98); background: #005580; }
+        .secure-note { font-size: 11px; color: #475569; margin-top: 20px; }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+    </style>
 </head>
-<body style="background-color: #0d1117; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0;">
-    <!-- 极简的官方加载质感，完全符合信息获取的心理学暗示 -->
-    <div id="loading-text" style="font-family: -apple-system, sans-serif; color: #8b949e; text-align: center; font-size: 14px;">
-        Carregando dados seguros...
-    </div>
+<body>
+
+<div class="card">
+    <div class="icon">📊</div>
+    <h1>CONEXÃO VIP LIBERADA</h1>
+    <p>Clique no botão abaixo para iniciar seu atendimento exclusivo via Telegram e receber os dados criptografados da Copa 2026.</p>
+    
+    <!-- 立即对话 核心 Action 按钮 -->
+    <a href="#" class="btn-action" onclick="handleButtonClick(event)">
+        FALAR COM O ANALISTA AGORA
+    </a>
+
+    <div class="secure-note">Criptografia de ponta a ponta ativa.</div>
+</div>
+
 </body>
 </html>
