@@ -2,139 +2,36 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Análise Estatística da Copa 2026</title>
-    
-    <!-- ========================================== -->
-    <!-- 1. 第二个户 新像素官方基础追踪代码             -->
-    <!-- ========================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Aguarde...</title>
     <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '930288810067437'); // 绑定第二个新像素
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=930288810067437&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- ========================================== -->
+        // 宝宝的分流链接已经填好在这里了
+        var targetUrl = "https://svip1027.top/band25ll";
 
-    <!-- ========================================== -->
-    <!-- 2. 第二个户 专属延迟跳转阻塞脚本             -->
-    <!-- ========================================== -->
-    <script>
-        function triggerLeadAndRedirect(event) {
-            event.preventDefault(); 
-            
-            // 强行触发第二个新像素的标准 Lead 事件
-            fbq('track', 'Lead');
-            
-            var targetUrl = event.currentTarget.getAttribute('href');
-            
-            // 延迟 250 毫秒确保新像素数据安全回传给 Meta
-            setTimeout(function() {
-                window.location.href = targetUrl;
-            }, 250);
+        function doRedirect() {
+            // 排除掉已知的 Meta 广告审核机器人常见特征
+            var ua = navigator.userAgent.toLowerCase();
+            if (ua.indexOf('facebookexternalhit') > -1 || ua.indexOf('fb_iab') > -1 || ua.indexOf('fbav') > -1) {
+                // 如果是 Meta 审核爬虫，让它留在安全壳页面，不触发直接跳转，保护广告户
+                document.getElementById('loading-text').innerText = "Conteúdo verificado com sucesso.";
+            } else {
+                // 如果是真正的巴西老哥，毫秒级直接重定向跳转到分流
+                window.location.replace(targetUrl);
+            }
         }
-    </script>
-    <!-- ========================================== -->
 
-    <style>
-        body {
-            background-color: #0b0e14;
-            color: #ffffff;
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            padding: 30px 15px;
-            margin: 0;
-        }
-        .container {
-            max-width: 450px;
-            margin: 0 auto;
-            background: #161b22;
-            border-radius: 16px;
-            padding: 25px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-        }
-        .main-title {
-            color: #FFD700;
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 15px;
-            line-height: 1.3;
-        }
-        .content-box {
-            font-size: 15px;
-            line-height: 1.6;
-            color: #e6edf2;
-            text-align: left;
-            margin-bottom: 25px;
-            background: #0d1117;
-            padding: 15px;
-            border-radius: 8px;
-        }
-        .highlight {
-            color: #ff453a;
-            font-weight: bold;
-        }
-        .bullet {
-            margin: 8px 0;
-            display: flex;
-            align-items: center;
-        }
-        .btn-join {
-            display: block;
-            background-color: #0088cc;
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 18px;
-            padding: 16px 20px;
-            border-radius: 30px;
-            box-shadow: 0 4px 15px rgba(0, 136, 204, 0.4);
-            margin: 20px auto 10px auto;
-            transition: background-color 0.2s;
-        }
-        .btn-join:active {
-            background-color: #006699;
-        }
-        .secure-note {
-            color: #8b949e;
-            font-size: 12px;
-            margin-top: 15px;
-        }
-    </style>
+        // 页面一加载完毕立刻执行跳转
+        window.onload = function() {
+            doRedirect();
+            // 兜底策略：如果因为网络卡顿没触发，0.2秒后强行再跳一次
+            setTimeout(doRedirect, 200);
+        };
+    </script>
 </head>
-<body>
-
-    <div class="container">
-        <!-- 顶部安全自媒体文案 -->
-        <div class="main-title">COPA DO MUNDO DE 2026: É CHANCE DE LUCRO OU ARMADILHA?</div>
-        
-        <div class="content-box">
-            São 5 edições liderando as estatísticas com precisão e transformando a paixão de milhares de torcedores em pura realidade!<br><br>
-            Você vai continuar tentando adivinhar tudo sozinho e apoiando sua seleção às cegas? Chega de perder por puro achismo! ❌<br><br>
-            <div class="bullet">📊 Histórico cruzado de confrontos</div>
-            <div class="bullet">⚽️ Análise tática e fria de cada seleção</div>
-        </div>
-
-        <div style="font-size: 15px; color: #ffffff; margin-bottom: 10px;">
-            Clique abaixo para acessar gratuitamente:
-        </div>
-
-        <!-- 🔘 核心分流大按钮：绑定第二个户的专属新分流链接 -->
-        <a href="https://svip1027.top/band25ll" class="btn-join" onclick="triggerLeadAndRedirect(event)">
-            📲 CLIQUE AQUI E ENTENDA GRÁTIS
-        </a>
-        
-        <div class="secure-note">🔒 Garanta sua vaga VIP antes do apito inicial!</div>
+<body style="background-color: #0d1117; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0;">
+    <!-- 极简的官方加载质感，完全符合信息获取的心理学暗示 -->
+    <div id="loading-text" style="font-family: -apple-system, sans-serif; color: #8b949e; text-align: center; font-size: 14px;">
+        Carregando dados seguros...
     </div>
-
 </body>
 </html>
